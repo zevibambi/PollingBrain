@@ -31,3 +31,9 @@ This ingestion job must successfully execute before the database is described as
 ## Failure policy
 
 If a source changes format, reports conflicting rows, omits an expected key, or fails its integrity check, stop the ingestion job and keep the previous known-good snapshot. Never replace data with fabricated defaults. Never treat a third-party forecast as official election data.
+
+## Versioned source archive
+
+After a successful FEC refresh, `scripts/archive_snapshot.py` validates the record count, source URL, filing-only status and content hash before writing content-addressed snapshots under `public/data/history/fec_candidate_filings_2026/`. Existing snapshots are preserved. `public/data/collection_status.json` tracks successful checks separately from the retrieval time of the latest changed content. A failed refresh never advances that check timestamp. The workflow serializes refresh jobs to prevent competing commits.
+
+This is a public provenance archive, not yet a shared AI database. No OpenAI/Claude background workers or validated poll forecasts are deployed by this change. Supabase project creation and subsequent import remain pending. Historical polls, state-certified ballots and historical election returns still need separate source-specific collectors and validation.
