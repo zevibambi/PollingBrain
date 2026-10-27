@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "last_reviewed": "2026-10-27",
+  "note": "A source identified here does not mean individual candidates, polls, or results have been independently verified or ingested.",
+  "sources": [
+    {
+      "id": "fec-candidate-master-2026",
+      "category": "federal_candidate_filing",
+      "publisher": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/files/bulk-downloads/2026/cn26.zip",
+      "status": "ready_for_automated_ingestion",
+      "caution": "Federal filings; NOT November ballot qualification"
+    },
+    {
+      "id": "fec-candidate-finance-2026",
+      "category": "federal_campaign_finance",
+      "publisher": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip",
+      "status": "source_identified",
+      "caution": "Money filings; NOT ballot qualification"
+    },
+    {
+      "id": "nj-certified-2026",
+      "category": "state_certified_ballot",
+      "publisher": "New Jersey Division of Elections",
+      "source_url": "https://www.nj.gov/state/elections/election-information-2026.shtml",
+      "status": "source_identified",
+      "caution": "Official Senate and House November general candidate lists; check amendments"
+    },
+    {
+      "id": "ca-certified-2026",
+      "category": "state_certified_ballot",
+      "publisher": "California Secretary of State",
+      "source_url": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+      "status": "source_identified",
+      "caution": "Official certified 2026 November ballots; monitor corrections"
+    },
+    {
+      "id": "tx-certified-2026",
+      "category": "state_certified_ballot",
+      "publisher": "Texas Secretary of State",
+      "source_url": "https://www.sos.state.tx.us/elections/laws/2026-november-general-election.shtml",
+      "status": "source_identified",
+      "caution": "Use 2026 candidate certification and final ballot order, including independents"
+    },
+    {
+      "id": "ny-certified-2026",
+      "category": "state_certified_ballot",
+      "publisher": "New York State Board of Elections",
+      "source_url": "https://elections.ny.gov/ballot-certifications-elections",
+      "status": "source_identified",
+      "caution": "Official list; preserve fusion party endorsements"
+    },
+    {
+      "id": "nv-certified-2026",
+      "category": "state_certified_ballot",
+      "publisher": "Nevada Secretary of State",
+      "source_url": "https://nvsos.gov/sos/elections/election-information/2026-election-information",
+      "status": "source_identified",
+      "caution": "Use November certified candidates, not filing-only list"
+    },
+    {
+      "id": "wa-certified-2026",
+      "category": "state_certified_ballot",
+      "publisher": "Washington Secretary of State",
+      "source_url": "https://www.sos.wa.gov/about-office/news/2026/secretary-state-certifies-candidates-and-measures-november-general-election",
+      "status": "source_identified",
+      "caution": "Certification announcement; match individual races against ballot list"
+    },
+    {
+      "id": "ca-election-results-2026",
+      "category": "official_results_feed",
+      "publisher": "California Secretary of State",
+      "source_url": "https://media.sos.ca.gov/",
+      "status": "source_identified_not_integrated",
+      "caution": "Do not show live until parser, timestamps, and de-duplication tests complete"
+    },
+    {
+      "id": "polls-pending",
+      "category": "polls",
+      "publisher": "Individual pollsters / commissioning outlets",
+      "source_url": null,
+      "status": "pending_original_releases_and_rights",
+      "caution": "No original-release poll records independently verified by this pipeline yet."
+    }
+  ]
+}
