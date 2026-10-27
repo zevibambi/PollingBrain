@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PollingBrain | Data sources and verification</title>
+<meta name="description" content="PollingBrain source ledger: official election and candidate records, verification status, and data provenance.">
+<style>
+:root{--navy:#101e40;--blue:#2668e8;--ink:#132241;--muted:#5f6d86;--line:#dce4ef;--bg:#f4f7fb}*{box-sizing:border-box}
+body{margin:0;color:var(--ink);background:var(--bg);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}a{color:#235fce}header{background:white;border-bottom:1px solid var(--line)}.wrap{max-width:1040px;margin:auto;padding:0 20px}header .wrap{padding-top:18px;padding-bottom:18px;display:flex;justify-content:space-between;align-items:center;gap:16px}header a{font-weight:750;text-decoration:none}header .brand{font-size:21px;letter-spacing:-.5px;color:var(--navy)}.brand strong{color:var(--blue)}.hero{background:linear-gradient(115deg,#0d1934,#243d68);color:white;padding:44px 0}.hero h1{font:700 clamp(31px,5vw,49px) Georgia,serif;margin:6px 0 8px}.hero p{max-width:720px;color:#d6e1f3}.tag{font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:800;color:#a8c7ff}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}.card{background:white;border:1px solid var(--line);border-radius:12px;padding:20px}.card strong{font-size:30px;display:block;color:var(--navy);line-height:1.2}.card small{color:var(--muted)}h2{font:700 27px Georgia,serif;margin:28px 0 11px}.warning{background:#fff8ea;border:1px solid #f0dca7;color:#765515;padding:14px 16px;border-radius:10px}.sources{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.sources article{background:white;border:1px solid var(--line);border-radius:12px;padding:18px;overflow-wrap:anywhere}.sources h3{margin:0 0 5px;font-size:16px}.sources p{font-size:13px;color:var(--muted);margin:7px 0}.status{display:inline-block;background:#eef2f7;border-radius:14px;padding:4px 9px;font-size:11px;color:#425776;font-weight:750}.status.ready{background:#eaf7ee;color:#247449}.sources a{font-size:12px;font-weight:800}.notes{padding:17px 0 35px}.notes p{color:var(--muted);font-size:13px}.links{display:flex;gap:14px;flex-wrap:wrap}.links a{font-weight:700}footer{background:var(--navy);color:#d6e1f1;padding:26px 0;font-size:12px}footer a{color:#c9deff}@media(max-width:750px){.cards{grid-template-columns:1fr 1fr}.sources{grid-template-columns:1fr}}@media(max-width:410px){.cards{gap:8px}.card{padding:14px}.card strong{font-size:26px}}
+</style></head><body>
+<header><div class="wrap"><a class="brand" href="/"><strong>Polling</strong>Brain</a><a href="/">← Back to forecasts</a></div></header>
+<section class="hero"><div class="wrap"><div class="tag">Transparency · Official data · Audit trail</div><h1>Where our data comes from</h1><p>Every election record should be traceable to an original source. This page shows which authoritative sources we've identified, what has been ingested, and what still needs verification.</p></div></section>
+<main class="wrap">
+<div class="cards"><div class="card"><strong id="filed">4,424</strong><small>Federal FEC filing records</small></div><div class="card"><strong id="house">3,741</strong><small>House filing records</small></div><div class="card"><strong id="senate">683</strong><small>Senate filing records</small></div><div class="card"><strong>0</strong><small>Polls independently verified here</small></div></div>
+<div class="warning"><strong>Source integrity notice:</strong> FEC filings are not certified ballots. Names appearing in the FEC records must be matched against the relevant state's final November certification. Existing PollingBrain control probabilities and race forecasts are still provisional, not independently verified by this new pipeline.</div>
+<h2>Primary sources</h2><div id="sources" class="sources" aria-live="polite"><p>Loading source registry…</p></div>
+<section class="notes"><h2>Download and audit</h2><p id="checked">FEC dataset imported October 27, 2026. Reading snapshot metadata…</p>
+<div class="links"><a href="/data/fec_candidate_filings_2026.json">Download 2026 FEC filing records (JSON)</a><a href="/data/source_registry.json">Download source registry</a><a href="https://github.com/zevibambi/PollingBrain/blob/main/DATA_SOURCES.md">Verification standards and methodology</a></div>
+<p>FEC records deliberately omit candidate mailing addresses. Data is refreshed automatically when GitHub Actions succeeds, and failed updates should not overwrite the previous valid snapshot. No live election results are claimed.</p></section></main>
+<footer><div class="wrap">PollingBrain · Development data · Source transparency. This page distinguishes official source records from verified general-election ballot status.</div></footer>
+<script>
+(async()=>{
+const el=document.getElementById('sources');
+try{
+ const res=await fetch('/data/source_registry.json',{cache:'no-store'});if(!res.ok)throw Error('Source registry unavailable'); const data=await res.json();
+ el.textContent='';
+ for(const item of data.sources){const article=document.createElement('article');const title=document.createElement('h3');title.textContent=item.publisher;article.appendChild(title);
+ const badge=document.createElement('span');badge.className='status'+(item.status.startsWith('ready')?' ready':'');badge.textContent=item.status.replaceAll('_',' ');article.appendChild(badge);
+ const kind=document.createElement('p');kind.textContent=item.category.replaceAll('_',' ');article.appendChild(kind);
+ const desc=document.createElement('p');desc.textContent=item.caution;article.appendChild(desc);
+ if(item.source_url){const a=document.createElement('a');a.href=item.source_url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='View original official source →';article.appendChild(a)}
+ el.appendChild(article)}
+}catch(e){el.textContent='Source registry temporarily unavailable. Use the GitHub link in the download section.'}
+try{
+ const res=await fetch('/data/fec_candidate_filings_2026.json');if(!res.ok)throw Error('Unavailable');const d=await res.json();
+ document.getElementById('filed').textContent=d.record_count.toLocaleString();
+ const house=d.records.reduce((n,r)=>n+(r.office==='H'),0);document.getElementById('house').textContent=house.toLocaleString();document.getElementById('senate').textContent=(d.record_count-house).toLocaleString();
+ document.getElementById('checked').textContent='FEC candidate master retrieved '+new Date(d.retrieved_at).toLocaleString()+'. '+d.record_count.toLocaleString()+' records. Filing records only; not verified ballot candidates.';
+}catch(e){document.getElementById('checked').textContent='The FEC snapshot is currently unavailable; source links remain accessible above.'}
+})();
+</script></body></html>
