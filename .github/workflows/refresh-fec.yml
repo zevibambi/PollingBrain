@@ -1,6 +1,11 @@
 name: Refresh official FEC candidate filings
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/refresh-fec.yml'
+      - 'scripts/refresh_fec.py'
+      - 'tests/test_refresh_fec.py'
   schedule:
     - cron: '26 6,18 * * *'
 permissions:
@@ -20,12 +25,12 @@ jobs:
         run: python scripts/refresh_fec.py
       - name: Commit changed dataset
         run: |
-          if git diff --quiet -- public/data/fec_candidate_filings_2026.json; then
+          git add public/data/fec_candidate_filings_2026.json
+          if git diff --cached --quiet; then
             echo 'No source changes'
             exit 0
           fi
           git config user.name 'pollingbrain-data-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add public/data/fec_candidate_filings_2026.json
           git commit -m 'data: refresh sourced FEC filings'
           git push
