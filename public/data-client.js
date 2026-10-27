@@ -1,0 +1,45 @@
+'use strict';
+(async () => {
+ const base = 'https://rrqxrbutruvofvhveukl.supabase.co/rest/v1/';
+ const key = 'sb_publishable_tb_kJRHZiDVdGGkeGOcnbA_6ecje2PJ';
+ const status = document.getElementById('databaseStatus');
+ const listing = document.getElementById('verifiedPolls');
+ async function query(table, parameters) {
+  const response = await fetch(base + table + '?' + parameters, {headers:{apikey:key}, signal:AbortSignal.timeout(15000)});
+  if (!response.ok) throw new Error('Database request failed');
+  return response.json();
+ }
+ const outcomes = await Promise.allSettled([
+  query('collection_status','select=dataset,record_count,last_source_check_at,last_database_sync_at,status'),
+  query('polls','select=race_id,pollster,field_start,field_end,sample_size,population,results,original_release_url,review_notes&review_status=eq.verified&order=field_end.desc&limit=200')
+ ]);
+ if(outcomes[0].status === 'fulfilled') {
+  const fec = outcomes[0].value.find(row => row.dataset === 'fec_candidate_filings_2026');
+  status.textContent = fec ? 'Database connected. '+fec.record_count.toLocaleString()+' FEC filing records in the latest snapshot. Source checked '+new Date(fec.last_source_check_at).toLocaleString()+'. Database synced '+new Date(fec.last_database_sync_at).toLocaleString()+'.' : 'Database connected. First collection pending.';
+ } else { status.textContent = 'Database connection unavailable. Static source downloads remain available below.'; }
+ if(outcomes[1].status === 'fulfilled') {
+  const polls = outcomes[1].value;
+  document.getElementById('verifiedPollCount').textContent = polls.length === 200 ? '200+' : String(polls.length);
+  listing.textContent = '';
+  if(!polls.length) listing.textContent = 'No verified poll observations published yet.';
+  for(const poll of polls) {
+   const article = document.createElement('article');
+   const heading = document.createElement('h3');
+   heading.textContent = poll.race_id+' · '+poll.pollster;
+   article.appendChild(heading);
+   const metadata = document.createElement('p');
+   metadata.textContent = 'Fieldwork '+poll.field_start+' to '+poll.field_end+' · '+(poll.sample_size || 'Unknown sample size')+' '+poll.population;
+   article.appendChild(metadata);
+   const result = document.createElement('p');
+   result.textContent = poll.results.map(item=>item.name+' '+item.percentage+'%').join(' · ');
+   article.appendChild(result);
+   const note = document.createElement('p');
+   note.textContent = poll.review_notes;
+   article.appendChild(note);
+   const link = document.createElement('a');
+   const url = new URL(poll.original_release_url);
+   if(url.protocol === 'https:') { link.href=url.href;link.textContent='Read original poll release';link.target='_blank';link.rel='noopener noreferrer';article.appendChild(link); }
+   listing.appendChild(article);
+  }
+ } else { listing.textContent='Poll database unavailable. No placeholder polls are shown.'; }
+})();
