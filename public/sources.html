@@ -9,9 +9,9 @@ body{margin:0;color:var(--ink);background:var(--bg);font:15px/1.55 system-ui,-ap
 <header><div class="wrap"><a class="brand" href="/"><strong>Polling</strong>Brain</a><a href="/">← Back to forecasts</a></div></header>
 <section class="hero"><div class="wrap"><div class="tag">Transparency · Official data · Audit trail</div><h1>Where our data comes from</h1><p>Every election record should be traceable to an original source. This page shows which authoritative sources we've identified, what has been ingested, and what still needs verification.</p></div></section>
 <main class="wrap">
-<div class="cards"><div class="card"><strong id="filed">4,424</strong><small>Federal FEC filing records</small></div><div class="card"><strong id="house">3,741</strong><small>House filing records</small></div><div class="card"><strong id="senate">683</strong><small>Senate filing records</small></div><div class="card"><strong>0</strong><small>Polls independently verified here</small></div></div>
+<div class="cards"><div class="card"><strong id="filed">4,424</strong><small>Federal FEC filing records</small></div><div class="card"><strong id="house">3,741</strong><small>House filing records</small></div><div class="card"><strong id="senate">683</strong><small>Senate filing records</small></div><div class="card"><strong id="verifiedPollCount">…</strong><small>Source-checked poll observations</small></div></div>
 <div class="warning"><strong>Source integrity notice:</strong> FEC filings are not certified ballots. Names appearing in the FEC records must be matched against the relevant state's final November certification. Existing PollingBrain control probabilities and race forecasts are still provisional, not independently verified by this new pipeline.</div>
-<h2>Primary sources</h2><div id="sources" class="sources" aria-live="polite"><p>Loading source registry…</p></div>
+<section><h2>Database and verified polls</h2><p id="databaseStatus" role="status">Connecting to the source database…</p><p>Initial coverage only. These are survey percentages, not win probabilities. Multiple race questions from one survey are correlated observations.</p><div id="verifiedPolls" class="sources" aria-live="polite">Loading stored polls…</div></section>\n<h2>Primary sources</h2><div id="sources" class="sources" aria-live="polite"><p>Loading source registry…</p></div>
 <section class="notes"><h2>Download and audit</h2><p id="checked">FEC dataset imported October 27, 2026. Reading snapshot metadata…</p>
 <div class="links"><a href="/data/fec_candidate_filings_2026.json">Download 2026 FEC filing records (JSON)</a><a href="/data/source_registry.json">Download source registry</a><a href="https://github.com/zevibambi/PollingBrain/blob/main/DATA_SOURCES.md">Verification standards and methodology</a></div>
 <p>FEC records deliberately omit candidate mailing addresses. Data is refreshed automatically when GitHub Actions succeeds, and failed updates should not overwrite the previous valid snapshot. No live election results are claimed.</p></section></main>
@@ -36,4 +36,4 @@ try{
  document.getElementById('checked').textContent='FEC candidate master retrieved '+new Date(d.retrieved_at).toLocaleString()+'. '+d.record_count.toLocaleString()+' records. Filing records only; not verified ballot candidates.';
 }catch(e){document.getElementById('checked').textContent='The FEC snapshot is currently unavailable; source links remain accessible above.'}
 })();
-</script></body></html>
+</script><script src="/data-client.js" defer></script></body></html>
