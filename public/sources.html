@@ -9,32 +9,12 @@ body{margin:0;color:var(--ink);background:var(--bg);font:15px/1.55 system-ui,-ap
 <header><div class="wrap"><a class="brand" href="/"><strong>Polling</strong>Brain</a><a href="/">← Back to forecasts</a></div></header>
 <section class="hero"><div class="wrap"><div class="tag">Transparency · Official data · Audit trail</div><h1>Where our data comes from</h1><p>Every election record should be traceable to an original source. This page shows which authoritative sources we've identified, what has been ingested, and what still needs verification.</p></div></section>
 <main class="wrap">
-<div class="cards"><div class="card"><strong id="filed">4,424</strong><small>Federal FEC filing records</small></div><div class="card"><strong id="house">3,741</strong><small>House filing records</small></div><div class="card"><strong id="senate">683</strong><small>Senate filing records</small></div><div class="card"><strong id="verifiedPollCount">…</strong><small>Source-checked poll observations</small></div></div>
+<div class="cards"><div class="card"><strong id="filed">…</strong><small>Federal FEC filing records</small></div><div class="card"><strong id="house">…</strong><small>House filing records</small></div><div class="card"><strong id="senate">…</strong><small>Senate filing records</small></div><div class="card"><strong id="verifiedPollCount">…</strong><small>Source-checked poll observations</small></div></div>
 <div class="warning"><strong>Source integrity notice:</strong> FEC filings are not certified ballots. Names appearing in the FEC records must be matched against the relevant state's final November certification. Existing PollingBrain control probabilities and race forecasts are still provisional, not independently verified by this new pipeline.</div>
 <section><h2>Database and verified polls</h2><p id="databaseStatus" role="status">Connecting to the source database…</p><p>Initial coverage only. These are survey percentages, not win probabilities. Multiple race questions from one survey are correlated observations.</p><div id="verifiedPolls" class="sources" aria-live="polite">Loading stored polls…</div></section>
 <h2>Primary sources</h2><div id="sources" class="sources" aria-live="polite"><p>Loading source registry…</p></div>
-<section class="notes"><h2>Download and audit</h2><p id="checked">FEC dataset imported October 27, 2026. Reading snapshot metadata…</p>
+<section class="notes"><h2>Download and audit</h2><p>Source downloads below are collected separately from the live database. Collection timestamps appear above.</p>
 <div class="links"><a href="/data/fec_candidate_filings_2026.json">Download 2026 FEC filing records (JSON)</a><a href="/data/source_registry.json">Download source registry</a><a href="https://github.com/zevibambi/PollingBrain/blob/main/DATA_SOURCES.md">Verification standards and methodology</a></div>
 <p>FEC records deliberately omit candidate mailing addresses. Data is refreshed automatically when GitHub Actions succeeds, and failed updates should not overwrite the previous valid snapshot. No live election results are claimed.</p></section></main>
 <footer><div class="wrap">PollingBrain · Development data · Source transparency. This page distinguishes official source records from verified general-election ballot status.</div></footer>
-<script>
-(async()=>{
-const el=document.getElementById('sources');
-try{
- const res=await fetch('/data/source_registry.json',{cache:'no-store'});if(!res.ok)throw Error('Source registry unavailable'); const data=await res.json();
- el.textContent='';
- for(const item of data.sources){const article=document.createElement('article');const title=document.createElement('h3');title.textContent=item.publisher;article.appendChild(title);
- const badge=document.createElement('span');badge.className='status'+(item.status.startsWith('ready')?' ready':'');badge.textContent=item.status.replaceAll('_',' ');article.appendChild(badge);
- const kind=document.createElement('p');kind.textContent=item.category.replaceAll('_',' ');article.appendChild(kind);
- const desc=document.createElement('p');desc.textContent=item.caution;article.appendChild(desc);
- if(item.source_url){const a=document.createElement('a');a.href=item.source_url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='View original official source →';article.appendChild(a)}
- el.appendChild(article)}
-}catch(e){el.textContent='Source registry temporarily unavailable. Use the GitHub link in the download section.'}
-try{
- const res=await fetch('/data/fec_candidate_filings_2026.json');if(!res.ok)throw Error('Unavailable');const d=await res.json();
- document.getElementById('filed').textContent=d.record_count.toLocaleString();
- const house=d.records.reduce((n,r)=>n+(r.office==='H'),0);document.getElementById('house').textContent=house.toLocaleString();document.getElementById('senate').textContent=(d.record_count-house).toLocaleString();
- document.getElementById('checked').textContent='FEC candidate master retrieved '+new Date(d.retrieved_at).toLocaleString()+'. '+d.record_count.toLocaleString()+' records. Filing records only; not verified ballot candidates.';
-}catch(e){document.getElementById('checked').textContent='The FEC snapshot is currently unavailable; source links remain accessible above.'}
-})();
-</script><script src="/data-client.js" defer></script></body></html>
+<script src="/data-client.js" defer></script></body></html>
