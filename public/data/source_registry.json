@@ -8,7 +8,7 @@
       "category": "federal_candidate_filing",
       "publisher": "Federal Election Commission",
       "source_url": "https://www.fec.gov/files/bulk-downloads/2026/cn26.zip",
-      "status": "ready_for_automated_ingestion",
+      "status": "ingested_filings_only",
       "caution": "Federal filings; NOT November ballot qualification"
     },
     {
@@ -80,8 +80,40 @@
       "category": "polls",
       "publisher": "Individual pollsters / commissioning outlets",
       "source_url": null,
-      "status": "pending_original_releases_and_rights",
-      "caution": "No original-release poll records independently verified by this pipeline yet."
+      "status": "initial_coverage_expanding",
+      "caution": "Four source-checked Texas race observations across September and October ReconMR surveys are stored. National and historical coverage remains incomplete."
+    },
+    {
+      "id": "reconmr-texas-oct-2026",
+      "publisher": "ReconMR / Siena Research Institute",
+      "source_url": "https://sri.siena.edu/2026/10/13/talarico-maintains-small-lead-over-paxton/",
+      "category": "poll_original_release",
+      "status": "original_release_reviewed",
+      "caution": "Survey observations, not election results or win probabilities."
+    },
+    {
+      "id": "reconmr-texas-sep-2026",
+      "publisher": "ReconMR / Siena Research Institute",
+      "source_url": "https://sri.siena.edu/2026/09/17/hinojosa-now-leads-abbott-by-4-points-talarico-widens-lead-to-6-points/",
+      "category": "poll_original_release",
+      "status": "original_release_reviewed",
+      "caution": "Survey observations, not election results or win probabilities."
+    },
+    {
+      "id": "siena-release-feed",
+      "publisher": "Siena Research Institute",
+      "source_url": "https://sri.siena.edu/feed/",
+      "category": "poll_release_feed",
+      "status": "collection_enabled",
+      "caution": "Discovery metadata only. Items require extraction and source checking."
+    },
+    {
+      "id": "marquette-release-feed",
+      "publisher": "Marquette Law School Poll",
+      "source_url": "https://law.marquette.edu/poll/feed/",
+      "category": "poll_release_feed",
+      "status": "collection_enabled",
+      "caution": "Discovery metadata only. Items require extraction and source checking."
     }
   ]
 }
