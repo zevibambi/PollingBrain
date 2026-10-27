@@ -6,8 +6,13 @@ on:
       - '.github/workflows/refresh-fec.yml'
       - 'scripts/refresh_fec.py'
       - 'tests/test_refresh_fec.py'
+      - 'scripts/archive_snapshot.py'
+      - 'tests/test_archive_snapshot.py'
   schedule:
     - cron: '26 6,18 * * *'
+concurrency:
+  group: pollingbrain-fec-refresh
+  cancel-in-progress: false
 permissions:
   contents: write
 jobs:
@@ -23,9 +28,11 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Refresh FEC dataset
         run: python scripts/refresh_fec.py
+      - name: Preserve verified source history and check timestamp
+        run: python scripts/archive_snapshot.py
       - name: Commit changed dataset
         run: |
-          git add public/data/fec_candidate_filings_2026.json
+          git add public/data/fec_candidate_filings_2026.json public/data/history public/data/collection_status.json
           if git diff --cached --quiet; then
             echo 'No source changes'
             exit 0
