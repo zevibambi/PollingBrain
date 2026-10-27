@@ -1,0 +1,714 @@
+{
+  "schema_version": 1,
+  "collection": "40_completed_federal_general_election_cycles",
+  "election_years": [
+    1946,
+    1948,
+    1950,
+    1952,
+    1954,
+    1956,
+    1958,
+    1960,
+    1962,
+    1964,
+    1966,
+    1968,
+    1970,
+    1972,
+    1974,
+    1976,
+    1978,
+    1980,
+    1982,
+    1984,
+    1986,
+    1988,
+    1990,
+    1992,
+    1994,
+    1996,
+    1998,
+    2000,
+    2002,
+    2004,
+    2006,
+    2008,
+    2010,
+    2012,
+    2014,
+    2016,
+    2018,
+    2020,
+    2022,
+    2024
+  ],
+  "covered_year_count": 40,
+  "scope": "U.S. House national popular vote and seats by party; not district-level race records, not polls",
+  "status": "historical_observed_data_from_named_source",
+  "source": {
+    "publisher": "Brookings Institution",
+    "dataset": "Vital Statistics on Congress, Table 2-2: Popular Vote and House Seats Won by Party, 1946–2024",
+    "data_url": "https://www.brookings.edu/wp-content/uploads/2026/04/2-2.csv",
+    "landing_page": "https://www.brookings.edu/articles/vital-statistics-on-congress/",
+    "note": "Retains source-provided field names, values and categories. Check table notes for methodology."
+  },
+  "retrieved_at": "2026-10-27T23:42:44.517982+00:00",
+  "source_sha256": "bb1f2ae3339a51110d93e7e5ff3c9210bcf6d1c288c3162eb80d4f5e69adb92b",
+  "columns": [
+    "Year",
+    "DemPctVotes",
+    "DemPctSeats",
+    "RepPctVotes",
+    "RepPctSeats",
+    "ChangePctVotes",
+    "DirectionVotesChange",
+    "ChangePctSeatsWon",
+    "DirectionSeatsChange",
+    "DemSeatsAndVotesDifference"
+  ],
+  "records_per_year": {
+    "1946": 1,
+    "1948": 1,
+    "1950": 1,
+    "1952": 1,
+    "1954": 1,
+    "1956": 1,
+    "1958": 1,
+    "1960": 1,
+    "1962": 1,
+    "1964": 1,
+    "1966": 1,
+    "1968": 1,
+    "1970": 1,
+    "1972": 1,
+    "1974": 1,
+    "1976": 1,
+    "1978": 1,
+    "1980": 1,
+    "1982": 1,
+    "1984": 1,
+    "1986": 1,
+    "1988": 1,
+    "1990": 1,
+    "1992": 1,
+    "1994": 1,
+    "1996": 1,
+    "1998": 1,
+    "2000": 1,
+    "2002": 1,
+    "2004": 1,
+    "2006": 1,
+    "2008": 1,
+    "2010": 1,
+    "2012": 1,
+    "2014": 1,
+    "2016": 1,
+    "2018": 1,
+    "2020": 1,
+    "2022": 1,
+    "2024": 1
+  },
+  "source_records": [
+    {
+      "year": 1946,
+      "values": {
+        "Year": "1946",
+        "DemPctVotes": "44.3",
+        "DemPctSeats": "43.3",
+        "RepPctVotes": "53.5",
+        "RepPctSeats": "56.7",
+        "ChangePctVotes": "6.4",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "12.8",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "-1"
+      }
+    },
+    {
+      "year": 1948,
+      "values": {
+        "Year": "1948",
+        "DemPctVotes": "51.6",
+        "DemPctSeats": "60.6",
+        "RepPctVotes": "45.4",
+        "RepPctSeats": "39.4",
+        "ChangePctVotes": "7.9",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "17.3",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "9"
+      }
+    },
+    {
+      "year": 1950,
+      "values": {
+        "Year": "1950",
+        "DemPctVotes": "48.9",
+        "DemPctSeats": "54",
+        "RepPctVotes": "48.9",
+        "RepPctSeats": "46",
+        "ChangePctVotes": "3.2",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "6.6",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "5.1"
+      }
+    },
+    {
+      "year": 1952,
+      "values": {
+        "Year": "1952",
+        "DemPctVotes": "49.2",
+        "DemPctSeats": "49.1",
+        "RepPctVotes": "49.3",
+        "RepPctSeats": "50.9",
+        "ChangePctVotes": "0.1",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "4.9",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "-0.1"
+      }
+    },
+    {
+      "year": 1954,
+      "values": {
+        "Year": "1954",
+        "DemPctVotes": "52.1",
+        "DemPctSeats": "53.3",
+        "RepPctVotes": "47",
+        "RepPctSeats": "46.7",
+        "ChangePctVotes": "2.6",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "4.2",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "1.2"
+      }
+    },
+    {
+      "year": 1956,
+      "values": {
+        "Year": "1956",
+        "DemPctVotes": "50.7",
+        "DemPctSeats": "53.8",
+        "RepPctVotes": "48.7",
+        "RepPctSeats": "46.2",
+        "ChangePctVotes": "1.5",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "0.5",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "3.1"
+      }
+    },
+    {
+      "year": 1958,
+      "values": {
+        "Year": "1958",
+        "DemPctVotes": "55.5",
+        "DemPctSeats": "64.9",
+        "RepPctVotes": "43.6",
+        "RepPctSeats": "35.1",
+        "ChangePctVotes": "5",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "11.1",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "9.4"
+      }
+    },
+    {
+      "year": 1960,
+      "values": {
+        "Year": "1960",
+        "DemPctVotes": "54.4",
+        "DemPctSeats": "60",
+        "RepPctVotes": "44.8",
+        "RepPctSeats": "40",
+        "ChangePctVotes": "1.2",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "4.9",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "5.6"
+      }
+    },
+    {
+      "year": 1962,
+      "values": {
+        "Year": "1962",
+        "DemPctVotes": "52.1",
+        "DemPctSeats": "59.4",
+        "RepPctVotes": "47.1",
+        "RepPctSeats": "40.6",
+        "ChangePctVotes": "2.3",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "0.6",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "7.3"
+      }
+    },
+    {
+      "year": 1964,
+      "values": {
+        "Year": "1964",
+        "DemPctVotes": "56.9",
+        "DemPctSeats": "67.8",
+        "RepPctVotes": "42.4",
+        "RepPctSeats": "32.2",
+        "ChangePctVotes": "4.8",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "8.4",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "10.9"
+      }
+    },
+    {
+      "year": 1966,
+      "values": {
+        "Year": "1966",
+        "DemPctVotes": "50.5",
+        "DemPctSeats": "57",
+        "RepPctVotes": "48",
+        "RepPctSeats": "43",
+        "ChangePctVotes": "6",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "10.8",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "6.5"
+      }
+    },
+    {
+      "year": 1968,
+      "values": {
+        "Year": "1968",
+        "DemPctVotes": "50",
+        "DemPctSeats": "55.9",
+        "RepPctVotes": "48.2",
+        "RepPctSeats": "44.1",
+        "ChangePctVotes": "0.3",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "1.1",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "5.9"
+      }
+    },
+    {
+      "year": 1970,
+      "values": {
+        "Year": "1970",
+        "DemPctVotes": "53",
+        "DemPctSeats": "58.6",
+        "RepPctVotes": "44.5",
+        "RepPctSeats": "41.4",
+        "ChangePctVotes": "3.4",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "2.7",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "5.6"
+      }
+    },
+    {
+      "year": 1972,
+      "values": {
+        "Year": "1972",
+        "DemPctVotes": "51.7",
+        "DemPctSeats": "55.8",
+        "RepPctVotes": "46.4",
+        "RepPctSeats": "44.2",
+        "ChangePctVotes": "1.7",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "2.8",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "4.1"
+      }
+    },
+    {
+      "year": 1974,
+      "values": {
+        "Year": "1974",
+        "DemPctVotes": "57.1",
+        "DemPctSeats": "66.9",
+        "RepPctVotes": "40.5",
+        "RepPctSeats": "33.1",
+        "ChangePctVotes": "5.8",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "11.1",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "9.8"
+      }
+    },
+    {
+      "year": 1976,
+      "values": {
+        "Year": "1976",
+        "DemPctVotes": "56.2",
+        "DemPctSeats": "67.1",
+        "RepPctVotes": "42.1",
+        "RepPctSeats": "32.9",
+        "ChangePctVotes": "1.3",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "0.2",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "10.9"
+      }
+    },
+    {
+      "year": 1978,
+      "values": {
+        "Year": "1978",
+        "DemPctVotes": "53.4",
+        "DemPctSeats": "63.7",
+        "RepPctVotes": "44.7",
+        "RepPctSeats": "36.3",
+        "ChangePctVotes": "2.8",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "3.4",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "10.3"
+      }
+    },
+    {
+      "year": 1980,
+      "values": {
+        "Year": "1980",
+        "DemPctVotes": "50.4",
+        "DemPctSeats": "55.9",
+        "RepPctVotes": "48",
+        "RepPctSeats": "44.1",
+        "ChangePctVotes": "3.2",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "7.8",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "5.5"
+      }
+    },
+    {
+      "year": 1982,
+      "values": {
+        "Year": "1982",
+        "DemPctVotes": "55.2",
+        "DemPctSeats": "61.8",
+        "RepPctVotes": "43.3",
+        "RepPctSeats": "38.2",
+        "ChangePctVotes": "5.2",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "5.9",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "6.6"
+      }
+    },
+    {
+      "year": 1984,
+      "values": {
+        "Year": "1984",
+        "DemPctVotes": "52.1",
+        "DemPctSeats": "58.2",
+        "RepPctVotes": "47",
+        "RepPctSeats": "41.8",
+        "ChangePctVotes": "4.1",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "3.6",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "6.1"
+      }
+    },
+    {
+      "year": 1986,
+      "values": {
+        "Year": "1986",
+        "DemPctVotes": "54.5",
+        "DemPctSeats": "59.3",
+        "RepPctVotes": "44.6",
+        "RepPctSeats": "40.7",
+        "ChangePctVotes": "2.4",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "1.1",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "4.8"
+      }
+    },
+    {
+      "year": 1988,
+      "values": {
+        "Year": "1988",
+        "DemPctVotes": "53.3",
+        "DemPctSeats": "59.8",
+        "RepPctVotes": "45.5",
+        "RepPctSeats": "40.2",
+        "ChangePctVotes": "1.1",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "0.5",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "6.5"
+      }
+    },
+    {
+      "year": 1990,
+      "values": {
+        "Year": "1990",
+        "DemPctVotes": "52.9",
+        "DemPctSeats": "61.4",
+        "RepPctVotes": "45",
+        "RepPctSeats": "38.4",
+        "ChangePctVotes": "0.1",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "1.6",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "8.5"
+      }
+    },
+    {
+      "year": 1992,
+      "values": {
+        "Year": "1992",
+        "DemPctVotes": "50.8",
+        "DemPctSeats": "59.3",
+        "RepPctVotes": "45.6",
+        "RepPctSeats": "40.5",
+        "ChangePctVotes": "1.4",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "2.1",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "8.5"
+      }
+    },
+    {
+      "year": 1994,
+      "values": {
+        "Year": "1994",
+        "DemPctVotes": "45.4",
+        "DemPctSeats": "46.9",
+        "RepPctVotes": "52.4",
+        "RepPctSeats": "52.9",
+        "ChangePctVotes": "6.3",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "12.4",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "1.5"
+      }
+    },
+    {
+      "year": 1996,
+      "values": {
+        "Year": "1996",
+        "DemPctVotes": "48.5",
+        "DemPctSeats": "47.6",
+        "RepPctVotes": "48.9",
+        "RepPctSeats": "52",
+        "ChangePctVotes": "3.4",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "0.7",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "-0.9"
+      }
+    },
+    {
+      "year": 1998,
+      "values": {
+        "Year": "1998",
+        "DemPctVotes": "47.1",
+        "DemPctSeats": "48.5",
+        "RepPctVotes": "48",
+        "RepPctSeats": "51.3",
+        "ChangePctVotes": "0.3",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "0.9",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "1.4"
+      }
+    },
+    {
+      "year": 2000,
+      "values": {
+        "Year": "2000",
+        "DemPctVotes": "47",
+        "DemPctSeats": "48.7",
+        "RepPctVotes": "47.3",
+        "RepPctSeats": "50.8",
+        "ChangePctVotes": "0.3",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "0.2",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "1.7"
+      }
+    },
+    {
+      "year": 2002,
+      "values": {
+        "Year": "2002",
+        "DemPctVotes": "45",
+        "DemPctSeats": "47",
+        "RepPctVotes": "49.6",
+        "RepPctSeats": "52.8",
+        "ChangePctVotes": "2.3",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "2",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "2"
+      }
+    },
+    {
+      "year": 2004,
+      "values": {
+        "Year": "2004",
+        "DemPctVotes": "46.6",
+        "DemPctSeats": "46.4",
+        "RepPctVotes": "49.2",
+        "RepPctSeats": "53.4",
+        "ChangePctVotes": "1.1",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "0.6",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "-0.2"
+      }
+    },
+    {
+      "year": 2006,
+      "values": {
+        "Year": "2006",
+        "DemPctVotes": "52",
+        "DemPctSeats": "53.6",
+        "RepPctVotes": "45.6",
+        "RepPctSeats": "46.4",
+        "ChangePctVotes": "5.4",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "7.2",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "1.6"
+      }
+    },
+    {
+      "year": 2008,
+      "values": {
+        "Year": "2008",
+        "DemPctVotes": "52.9",
+        "DemPctSeats": "59.1",
+        "RepPctVotes": "42.3",
+        "RepPctSeats": "40.9",
+        "ChangePctVotes": "1.4",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "5.5",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "6.2"
+      }
+    },
+    {
+      "year": 2010,
+      "values": {
+        "Year": "2010",
+        "DemPctVotes": "44.8",
+        "DemPctSeats": "44.4",
+        "RepPctVotes": "51.4",
+        "RepPctSeats": "55.6",
+        "ChangePctVotes": "9",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "14.7",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "-0.4"
+      }
+    },
+    {
+      "year": 2012,
+      "values": {
+        "Year": "2012",
+        "DemPctVotes": "48.3",
+        "DemPctSeats": "46.2",
+        "RepPctVotes": "46.9",
+        "RepPctSeats": "53.8",
+        "ChangePctVotes": "4.1",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "1.8",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "-2.1"
+      }
+    },
+    {
+      "year": 2014,
+      "values": {
+        "Year": "2014",
+        "DemPctVotes": "45.5",
+        "DemPctSeats": "43.2",
+        "RepPctVotes": "50.6",
+        "RepPctSeats": "56.8",
+        "ChangePctVotes": "3.4",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "3",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "-2.3"
+      }
+    },
+    {
+      "year": 2016,
+      "values": {
+        "Year": "2016",
+        "DemPctVotes": "47.3",
+        "DemPctSeats": "44.6",
+        "RepPctVotes": "48.2",
+        "RepPctSeats": "55.4",
+        "ChangePctVotes": "2.2",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "1.4",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "-2.7"
+      }
+    },
+    {
+      "year": 2018,
+      "values": {
+        "Year": "2018",
+        "DemPctVotes": "53.2",
+        "DemPctSeats": "54.1",
+        "RepPctVotes": "44.5",
+        "RepPctSeats": "45.9",
+        "ChangePctVotes": "4.9",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "9.5",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "0.9"
+      }
+    },
+    {
+      "year": 2020,
+      "values": {
+        "Year": "2020",
+        "DemPctVotes": "50",
+        "DemPctSeats": "51",
+        "RepPctVotes": "47",
+        "RepPctSeats": "49",
+        "ChangePctVotes": "2.8",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "3.1",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "1"
+      }
+    },
+    {
+      "year": 2022,
+      "values": {
+        "Year": "2022",
+        "DemPctVotes": "47.4",
+        "DemPctSeats": "49",
+        "RepPctVotes": "50",
+        "RepPctSeats": "51",
+        "ChangePctVotes": "2.9",
+        "DirectionVotesChange": "R",
+        "ChangePctSeatsWon": "2.1",
+        "DirectionSeatsChange": "R",
+        "DemSeatsAndVotesDifference": "1.6"
+      }
+    },
+    {
+      "year": 2024,
+      "values": {
+        "Year": "2024",
+        "DemPctVotes": "47.2",
+        "DemPctSeats": "49.4",
+        "RepPctVotes": "49.7",
+        "RepPctSeats": "50.6",
+        "ChangePctVotes": "0.05",
+        "DirectionVotesChange": "D",
+        "ChangePctSeatsWon": "0.5",
+        "DirectionSeatsChange": "D",
+        "DemSeatsAndVotesDifference": "2.2"
+      }
+    }
+  ]
+}
