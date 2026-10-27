@@ -1,19 +1,26 @@
 # PollingBrain
-Development preview for the 2026 US election forecasting website.
 
-## Current status
-- Responsive, static proof of concept with House/Senate overview, race search, saved races and detail panels.
-- Figures and candidate names in this prototype are sourced from the user's October 27, 2026 project document and are **not independently verified**.
-- This is not a live forecast feed and should not be presented as one.
+US 2026 election website, hosted as static assets on Cloudflare, with a Supabase source database.
 
-## Hosting
-The site is a single static `index.html` suitable for Cloudflare Pages. Set the production branch to `main` with no build command and root output directory.
+## Implemented
+- Responsive forecast preview, race search and saved races.
+- Official FEC candidate filing collector, twice daily in GitHub Actions.
+- Content-addressed source history and collection timestamps.
+- Supabase: 4,424 versioned FEC filings, including one flagged missing name; filings do not certify ballot qualification.
+- Four source-checked Texas poll observations across two ReconMR surveys (September and October 2026), including field dates, sample sizes, release URLs and review evidence.
+- Twice-daily database sync from the source archive; every-two-hour discovery of Siena and Marquette release metadata into a pending review queue.
+- `/sources.html` reads published poll observations and database sync timestamps using read-only public access.
 
-## Next steps
-- Import and validate the existing Python forecasting model.
-- Replace static sample content with validated generated JSON.
-- Implement historical backtesting and data provenance.
-- Build scheduled data ingestion and forecast history.
-- Add an election-night data feed only after source/licensing verification and testing.
+## Deployment
+`wrangler.jsonc` serves `public/`. Main-branch pushes use the existing Cloudflare Git integration. Database schema and deployed discovery setup are documented under `database/`. These files describe already-applied setup; do not blindly reapply initial schema to an existing project.
 
-No external scripts, cookies, database or paid services are needed for this prototype.
+## Access model
+Anonymous and ordinary signed-in users can read public source records and verified/published data; they cannot write. Private sync functions are not publicly callable. Backend worker write access must be configured separately. No OpenAI or Claude worker is running yet. No secret keys belong in public code.
+
+## Remaining
+The homepage model figures and sample matchups remain unverified draft content. Comprehensive certified ballots, historical polls and official returns, news extraction, model calibration/backtesting, AI worker integration and election-night results ingestion remain unfinished. Current verified poll coverage is an initial Texas baseline, not a national polling average.
+
+## Validation
+`python -m unittest discover -s tests -v`
+
+See `DATA_SOURCES.md` for trust levels and source policy.
