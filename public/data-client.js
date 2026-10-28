@@ -1,4 +1,12 @@
 'use strict';
+function safeSourceUrl(value) {
+ try {
+  const url = new URL(value);
+  return url.protocol === 'https:' && !url.username && !url.password ? url.href : null;
+ } catch (_) { return null; }
+}
+if (typeof module !== 'undefined') module.exports = {safeSourceUrl};
+if (typeof document !== 'undefined')
 (async () => {
  const base = 'https://rrqxrbutruvofvhveukl.supabase.co/rest/v1/';
  const key = 'sb_publishable_tb_kJRHZiDVdGGkeGOcnbA_6ecje2PJ';
@@ -47,8 +55,8 @@
    note.textContent = poll.review_notes;
    article.appendChild(note);
    const link = document.createElement('a');
-   const url = new URL(poll.original_release_url);
-   if(url.protocol === 'https:') { link.href=url.href;link.textContent='Read original poll release';link.target='_blank';link.rel='noopener noreferrer';article.appendChild(link); }
+   const url = safeSourceUrl(poll.original_release_url);
+   if(url) { link.href=url;link.textContent='Read original poll release';link.target='_blank';link.rel='noopener noreferrer';article.appendChild(link); }
    listing.appendChild(article);
   }
  } else { listing.textContent='Poll database unavailable. No placeholder polls are shown.'; }
@@ -61,7 +69,8 @@
    const heading=document.createElement('h3');heading.textContent=source.publisher;article.appendChild(heading);
    const state=document.createElement('span');state.className='status';state.textContent=source.status.replaceAll('_',' ');article.appendChild(state);
    const note=document.createElement('p');note.textContent=source.caution;article.appendChild(note);
-   if(source.source_url && new URL(source.source_url).protocol==='https:') {const a=document.createElement('a');a.href=source.source_url;a.textContent='View original source';a.rel='noopener noreferrer';a.target='_blank';article.appendChild(a);}
+   const sourceUrl = safeSourceUrl(source.source_url);
+   if(sourceUrl) {const a=document.createElement('a');a.href=sourceUrl;a.textContent='View original source';a.rel='noopener noreferrer';a.target='_blank';article.appendChild(a);}
    sourceListing.appendChild(article);
   }
  } catch (_) {sourceListing.textContent='Live source registry unavailable. Download the source registry below.';}

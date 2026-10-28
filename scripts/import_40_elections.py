@@ -32,7 +32,10 @@ def extract_year(row):
 
 def parse_csv(raw):
     text = raw.decode("utf-8-sig")
-    dialect = csv.Sniffer().sniff(text[:8192], delimiters=",;\t")
+    try:
+        dialect = csv.Sniffer().sniff(text[:8192], delimiters=",;\t")
+    except csv.Error as exc:
+        raise ValueError("Malformed source CSV: delimiter could not be determined") from exc
     reader = csv.DictReader(io.StringIO(text), dialect=dialect)
     if not reader.fieldnames or len(reader.fieldnames) < 2:
         raise ValueError("Missing CSV headers")
