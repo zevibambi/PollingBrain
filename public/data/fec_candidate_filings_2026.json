@@ -8,10 +8,10 @@
     "url": "https://www.fec.gov/files/bulk-downloads/2026/cn26.zip",
     "documentation": "https://www.fec.gov/campaign-finance-data/candidate-master-file-description/"
   },
-  "retrieved_at": "2026-10-30T13:14:43.118715+00:00",
-  "source_archive_sha256": "f4da33084192548f84f1b13b5ec6f36390eca13bebc35719bae9ccf895d9f7ac",
-  "records_sha256": "53f9d10f76b6788d19947baa6e8c32ecededbf5f11cc33cd67b3d01a054e0c4e",
-  "record_count": 4426,
+  "retrieved_at": "2026-10-31T12:51:21.885803+00:00",
+  "source_archive_sha256": "60ff8edc34545b248b2d46ee56df6233f6c1a513be850a1670750512ee638515",
+  "records_sha256": "2d3e130dda17c3b034acc1bf8392e80bde6b562e4fa160165c776817a21d51d4",
+  "record_count": 4427,
   "records": [
     {
       "fec_id": "H0AL01055",
@@ -46754,6 +46754,17 @@
     },
     {
       "fec_id": "S6NY00649",
+      "name": "SOLOMON, GAVIN",
+      "party": "W",
+      "election_year": "2026",
+      "state": "NY",
+      "office": "S",
+      "district": "00",
+      "incumbency": "",
+      "fec_status": "N"
+    },
+    {
+      "fec_id": "S6NY00656",
       "name": "SOLOMON, GAVIN",
       "party": "W",
       "election_year": "2026",
