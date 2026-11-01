@@ -3,7 +3,7 @@
   "datasets": {
     "fec_candidate_filings_2026": {
       "source_url": "https://www.fec.gov/files/bulk-downloads/2026/cn26.zip",
-      "last_successful_check_at": "2026-11-01T13:39:16.830314+00:00",
+      "last_successful_check_at": "2026-11-01T22:13:54.160097+00:00",
       "latest_content_retrieved_at": "2026-10-31T12:51:21.885803+00:00",
       "records_sha256": "2d3e130dda17c3b034acc1bf8392e80bde6b562e4fa160165c776817a21d51d4",
       "record_count": 4427,
