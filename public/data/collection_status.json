@@ -3,9 +3,9 @@
   "datasets": {
     "fec_candidate_filings_2026": {
       "source_url": "https://www.fec.gov/files/bulk-downloads/2026/cn26.zip",
-      "last_successful_check_at": "2026-11-01T22:13:54.160097+00:00",
-      "latest_content_retrieved_at": "2026-10-31T12:51:21.885803+00:00",
-      "records_sha256": "2d3e130dda17c3b034acc1bf8392e80bde6b562e4fa160165c776817a21d51d4",
+      "last_successful_check_at": "2026-11-02T16:21:24.052639+00:00",
+      "latest_content_retrieved_at": "2026-11-02T16:21:23.945645+00:00",
+      "records_sha256": "066c0b58133d7c7ef1e22d610c10316bffe1c20e3a072948e9b45d8f69a34644",
       "record_count": 4427,
       "ballot_qualification_verified": false,
       "versions": [
@@ -25,6 +25,12 @@
           "records_sha256": "2d3e130dda17c3b034acc1bf8392e80bde6b562e4fa160165c776817a21d51d4",
           "retrieved_at": "2026-10-31T12:51:21.885803+00:00",
           "path": "history/fec_candidate_filings_2026/2d3e130dda17c3b034acc1bf8392e80bde6b562e4fa160165c776817a21d51d4.json",
+          "record_count": 4427
+        },
+        {
+          "records_sha256": "066c0b58133d7c7ef1e22d610c10316bffe1c20e3a072948e9b45d8f69a34644",
+          "retrieved_at": "2026-11-02T16:21:23.945645+00:00",
+          "path": "history/fec_candidate_filings_2026/066c0b58133d7c7ef1e22d610c10316bffe1c20e3a072948e9b45d8f69a34644.json",
           "record_count": 4427
         }
       ]
