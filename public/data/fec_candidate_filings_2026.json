@@ -8,9 +8,9 @@
     "url": "https://www.fec.gov/files/bulk-downloads/2026/cn26.zip",
     "documentation": "https://www.fec.gov/campaign-finance-data/candidate-master-file-description/"
   },
-  "retrieved_at": "2026-11-03T14:29:05.254998+00:00",
-  "source_archive_sha256": "97e057ca4b4f27f3a635181578075e68dae712f1b1ca616f3971afbbe19d6c89",
-  "records_sha256": "02b3c3764322790421c22d40356ee48b7631fb5201225e3a5d215f7bda628a72",
+  "retrieved_at": "2026-11-05T14:48:32.419335+00:00",
+  "source_archive_sha256": "39a6719d64be97192815168dbf459e1580324e7517669d4e1a4eea157ec6c81b",
+  "records_sha256": "446f72fc4daf9896dbbb9a108b0f4ccb53d1a013017db4b5b3ecca796f0d8fc8",
   "record_count": 4427,
   "records": [
     {
@@ -14827,7 +14827,7 @@
       "state": "FL",
       "office": "H",
       "district": "01",
-      "incumbency": "C",
+      "incumbency": "I",
       "fec_status": "C"
     },
     {
@@ -39775,7 +39775,7 @@
       "state": "CA",
       "office": "H",
       "district": "31",
-      "incumbency": "C",
+      "incumbency": "I",
       "fec_status": "C"
     },
     {
