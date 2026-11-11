@@ -8,9 +8,9 @@
     "url": "https://www.fec.gov/files/bulk-downloads/2026/cn26.zip",
     "documentation": "https://www.fec.gov/campaign-finance-data/candidate-master-file-description/"
   },
-  "retrieved_at": "2026-11-05T14:48:32.419335+00:00",
-  "source_archive_sha256": "39a6719d64be97192815168dbf459e1580324e7517669d4e1a4eea157ec6c81b",
-  "records_sha256": "446f72fc4daf9896dbbb9a108b0f4ccb53d1a013017db4b5b3ecca796f0d8fc8",
+  "retrieved_at": "2026-11-11T14:35:54.895547+00:00",
+  "source_archive_sha256": "7022516f2ba63bd0bbb021b0c204925dae223e7acf120ebdb2b8d43126ae9bc5",
+  "records_sha256": "9051164f7e41e0b9da9f8864cc5782de72c7be2e0f657df7f5ab195b96fb7309",
   "record_count": 4427,
   "records": [
     {
@@ -164,7 +164,7 @@
       "state": "CA",
       "office": "H",
       "district": "14",
-      "incumbency": "O",
+      "incumbency": "I",
       "fec_status": "C"
     },
     {
@@ -10515,7 +10515,7 @@
       "state": "CA",
       "office": "H",
       "district": "01",
-      "incumbency": "C",
+      "incumbency": "I",
       "fec_status": "C"
     },
     {
@@ -15333,7 +15333,7 @@
       "state": "FL",
       "office": "H",
       "district": "06",
-      "incumbency": "C",
+      "incumbency": "I",
       "fec_status": "C"
     },
     {
@@ -18259,7 +18259,7 @@
       "state": "GA",
       "office": "H",
       "district": "13",
-      "incumbency": "C",
+      "incumbency": "I",
       "fec_status": "C"
     },
     {
@@ -35056,7 +35056,7 @@
       "state": "TX",
       "office": "H",
       "district": "18",
-      "incumbency": "C",
+      "incumbency": "I",
       "fec_status": "C"
     },
     {
